@@ -10,7 +10,7 @@ public partial class Base : Node2D{
 	private static Label _appleCount;
 	private static Label _labelGameOver;
 	private static Area2D _apple;
-	
+
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
@@ -20,14 +20,14 @@ public partial class Base : Node2D{
 		_apple = GetNode<Area2D>("GameArea/PlayGround/Apple");
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-
-	public void RestartGame() {
+	public static void RestartGame() {
 		GameRun = true;
 		GameOver = false;
 		_labelGameOver.Visible = false;
 		_appleCount.Text = "0";
 	}
+
+
 	public static ColorRect GetPlayGround() {
 		return _playGround;
 	}
